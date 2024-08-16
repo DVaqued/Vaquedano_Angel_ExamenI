@@ -98,10 +98,92 @@ public class Vaquedano_Angel_E1 {
 
             }
             if (opcion == 3) {
-                
+                //Variable para ejercicio 3
+                String nombreCliente = "";
+                String tipoCanal = "", tipoCaja = "";
+                String pregunta2 = "SI";
+                int contadorHD = 0;
+                int contadorNORM = 0;
+                int subTotal = 0;
+                double total = 0, impuesto = 0;
+
+                System.out.println("Favor ingrese el nombre del cliente:");
+                nombreCliente = lea.next();
+
+                while (true) {
+                    if (pregunta2.equals("SI")) {
+                        System.out.println("Ingrese el tipo de canal que desea añadir HD '30 Lps.' / NORMAL '20 Lps.':");
+                        tipoCanal = lea.next().toUpperCase();
+                        if (tipoCanal.equals("HD") || tipoCanal.equals("NORMAL")) {
+                            if (tipoCanal.equals("HD")) {
+                                contadorHD++;
+                                subTotal += 30;
+                            }
+                            if (tipoCanal.equals("NORMAL")) {
+                                contadorNORM++;
+                                subTotal += 20;
+                            }
+                        } else {
+                            System.out.println("Favor ingrese un canal valido.");
+                        }
+                        System.out.println("Desea seguir añadiendo canales? SI/NO");
+                        pregunta2 = lea.next().toUpperCase();
+
+                    } else if (pregunta2.equals("NO")) {
+                        System.out.println("---Tipos de cajas---"
+                                + "\nLIGHTBOX: 50 Lps."
+                                + "\nHDBOX: 100 Lps."
+                                + "\nDVRBOX: 150 Lps.");
+                        System.out.println("Favor ingrese el tipo de caja que desea adquirir:");
+                        tipoCaja = lea.next().toUpperCase();
+
+                        if (tipoCaja.equals("LIGHTBOX")) {
+                            subTotal += 50;
+                        } else if (tipoCaja.equals("HDBOX")) {
+                            subTotal += 100;
+                        } else if (tipoCaja.equals("DVRBOX")) {
+                            subTotal += 150;
+                        }
+
+                        impuesto = subTotal * 0.15;
+                        total = subTotal + impuesto;
+                        System.out.println("---Factura---"
+                                + "\nNombre del cliente: " + nombreCliente
+                                + "\nCantidad de canales HD: " + contadorHD
+                                + "\nCantidad de canales Normales: " + contadorNORM
+                                + "\nSubTotal: " + subTotal
+                                + "\nImpuestos: " + String.format("%.2f", impuesto)
+                                + "\nTotal a pagar: " + String.format("%.2f", total));
+                        break;
+                    }
+
+                }
+
             }
             if (opcion == 4) {
-                
+                //Variables para el ejercicio 4
+                String palabra = "";
+                int vocales = 0;
+                char caracterActual;
+
+                System.out.println("Favor ingrese una palabra:");
+                palabra = lea.next();
+
+                for (int contadorVocales = 0; contadorVocales < palabra.length(); contadorVocales++) {
+                    caracterActual = palabra.charAt(contadorVocales);
+
+                    switch (caracterActual) {
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'o':
+                        case 'u':
+                            vocales++;
+
+                    }
+                }
+                System.out.println("La cantidad de vocales son: " + vocales + ".");
+
             }
             if (opcion == 5) {
                 System.out.println("HASTA LUEGO");
