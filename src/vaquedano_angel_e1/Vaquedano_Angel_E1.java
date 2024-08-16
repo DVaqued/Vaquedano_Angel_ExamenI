@@ -29,7 +29,8 @@ public class Vaquedano_Angel_E1 {
                     + "\n1. Piramide"
                     + "\n2. El Mayor"
                     + "\n3. Ventas de Canales y Cajas"
-                    + "\n4. Caracteres Vocales");
+                    + "\n4. Caracteres Vocales"
+                    + "\n5. Salir del programa");
             System.out.println("Favor ingrese la opcion que desea realizar: ");
 
             try {
