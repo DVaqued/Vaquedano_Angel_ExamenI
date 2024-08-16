@@ -28,7 +28,7 @@ public class Vaquedano_Angel_E1 {
             System.out.println("\n-----Menu-----"
                     + "\n1. Piramide"
                     + "\n2. El Mayor"
-                    + "\n3. Ventas de cajas."
+                    + "\n3. Ventas de Canales y Cajas"
                     + "\n4. Caracteres Vocales");
             System.out.println("Favor ingrese la opcion que desea realizar: ");
 
@@ -125,10 +125,15 @@ public class Vaquedano_Angel_E1 {
                             }
                         } else {
                             System.out.println("Favor ingrese un canal valido.");
-                        }
+                        }while(true){
                         System.out.println("Desea seguir añadiendo canales? SI/NO");
                         pregunta2 = lea.next().toUpperCase();
-
+                        if(pregunta2.equals("SI")||pregunta2.equals("NO")){
+                            break;
+                            }else{
+                            System.out.println("Favor ingrese una respuesta valida.");
+                        }
+                        }
                     } else if (pregunta2.equals("NO")) {
                         System.out.println("---Tipos de cajas---"
                                 + "\nLIGHTBOX: 50 Lps."
